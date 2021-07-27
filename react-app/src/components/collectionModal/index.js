@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
-// import CreateClub from "./ClubModal";
+import CreateCollection from "./CollectionModal";
 
 function CollectionModal() {
     const [showModal, setShowModal] = useState(false);
@@ -14,7 +14,7 @@ function CollectionModal() {
             </button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    {/* <CreateClub setShowModal={setShowModal} /> */}
+                    <CreateCollection setShowModal={setShowModal} />
                 </Modal>
             )}
         </>
