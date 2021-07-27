@@ -38,3 +38,34 @@ def post_club():
                 '_', ' ').replace(' id', '').capitalize()
             errorMessages.append(f'{formattedField} {formattedErr}')
     return {'errors': errorMessages}
+
+
+@collection_routes.route('/api/collections/<int:id>', methods=['PUT'])
+def put_club(id):
+    form = CollectionForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        editCollection = Collection.query.filter(Collection.id == id).first()
+        editCollection.name = form.name.data,
+        editCollection.description = form.description.data,
+        editCollection.user_id = current_user.id,
+        editCollection.collection_img_url = form.collection_img_url.data
+        db.session.commit()
+        return editCollection.to_dict()
+
+    errorMessages = []
+    for field in form.errors:
+        for error in form.errors[field]:
+            formattedErr = error[10:]
+            formattedField = field.replace(
+                '_', ' ').replace(' id', '').capitalize()
+            errorMessages.append(f'{formattedField} {formattedErr}')
+    return {'errors': errorMessages}
+
+
+@collection_routes.route('/api/collections/<int:id>', methods=['DELETE'])
+def delete_club(id):
+    collection = Collection.query.get(id)
+    db.session.delete(collection)
+    db.session.commit()
+    return {'message': True}

@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux"
 import { getCollections } from "../../store/collections";
 import { Link } from "react-router-dom";
-import CollectionModal from '../collectionModal'
+import CollectionModal from '../createCollectionModal'
+import EditCollectionModal from '../editCollectionModal'
+import DeleteCollectionModal from '../deleteCollectionModal'
 import './collection.css'
 
 const CollectionsPage = () => {
@@ -30,6 +32,8 @@ const CollectionsPage = () => {
                     <div >
                         <img className="collection_img" src={collection.collection_img_url} />
                     </div>
+                    <EditCollectionModal collection={collection} />
+                    <DeleteCollectionModal collection={collection} />
                 </div>
 
             ))}
