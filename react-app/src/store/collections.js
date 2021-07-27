@@ -1,8 +1,14 @@
 const GET_COLLECTIONS = 'collections/GET_COLLECTIONS'
+const POST_COLLECTION = 'collections/POST_COLLECTION'
 
 const loadCollections = (collections) => ({
     type: GET_COLLECTIONS,
     collections
+})
+
+const createCollection = (collection) => ({
+    type: POST_COLLECTION,
+    collection
 })
 
 
@@ -12,10 +18,26 @@ export const getCollections = () => async (dispatch) => {
     const res = await fetch('/api/collections');
     const collections = await res.json()
     if (res.ok) {
-        dispatch(loadCollections)
+        dispatch(loadCollections(collections))
+    }
+}
+
+export const postCollection = (collection) => async (dispatch) => {
+    const res = await fetch('/api/collections', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(collection)
+    });
+    if (res.ok) {
+        const data = await res.json();
+        if (data.errors) {
+            return data
+        }
+        dispatch(createCollection(data))
+        return data;
     }
 
-}
+};
 
 
 //reducer
@@ -29,6 +51,11 @@ const collectionsReducer = (state = initialState, action) => {
                 allCollections[collection.id] = collection
             })
             return allCollections
+        case POST_COLLECTION:
+            return {
+                ...state,
+                [action.collection.id]: action.collection
+            }
         default:
             return state;
 
