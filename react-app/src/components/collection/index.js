@@ -18,7 +18,6 @@ const CollectionsPage = () => {
     console.log(collections[0])
     return (
         <>
-            <CollectionModal />
             <div className="cards_container">
                 {collections.map((collection) => (
                     <div className="collection_card">
@@ -42,9 +41,11 @@ const CollectionsPage = () => {
                             </div>
                         </div>
                     </div>
-
-
                 ))}
+                <div className="collection_card">
+                    <CollectionModal />
+                    <h3>Create New Collection</h3>
+                </div>
             </div>
         </>
     )

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
-import CreateCollection from "./CollectionModal";
-import "./CreateCollection.css"
+import CreateConsole from "./CreateConsole";
 
-function CollectionModal() {
+
+function ConsoleModal({id}) {
     const [showModal, setShowModal] = useState(false);
 
     return (
@@ -13,11 +13,11 @@ function CollectionModal() {
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <CreateCollection setShowModal={setShowModal} />
+                    <CreateConsole setShowModal={setShowModal} id={id}/>
                 </Modal>
             )}
         </>
     );
 }
 
-export default CollectionModal;
+export default ConsoleModal;

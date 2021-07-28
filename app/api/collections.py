@@ -1,4 +1,4 @@
-from app.forms import collection_form
+
 from flask import Blueprint, request
 from ..models import db, Collection
 from flask_login import current_user
@@ -16,7 +16,7 @@ def get_collections():
 
 
 @collection_routes.route('/api/collections', methods=['POST'])
-def post_club():
+def post_collection():
     form = CollectionForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
@@ -41,7 +41,7 @@ def post_club():
 
 
 @collection_routes.route('/api/collections/<int:id>', methods=['PUT'])
-def put_club(id):
+def put_collection(id):
     form = CollectionForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
