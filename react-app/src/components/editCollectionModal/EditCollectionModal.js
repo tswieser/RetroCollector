@@ -43,7 +43,7 @@ function EditCollection({ setShowModal, collection }) {
                     </ul>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
-                            Club Name
+                            Collection Name
                         </label>
                     </div>
                     <div>

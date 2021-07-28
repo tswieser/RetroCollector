@@ -26,8 +26,8 @@ const NavBar = () => {
     } else {
         sessionLinks = (
             <div>
-                <div>
-                    <NavLink to='/sign-up' exact={true} activeClassName='active'>
+                <div className="signup_btn_container">
+                    <NavLink style={{ textDecoration: 'none' }} className="signup_button" to='/sign-up' exact={true} activeClassName='active'>
                         SIGN UP
                     </NavLink>
                 </div>
