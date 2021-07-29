@@ -6,6 +6,7 @@ import { getConsoles } from "../../store/console"
 import ConsoleModal from '../createConsoleModal'
 import EditConsoleModal from '../editConsoleModal'
 import DeleteConsoleModal from "../deleteConsoleModal";
+import AddGames from '../addGame'
 import "./game.css"
 
 
@@ -61,7 +62,9 @@ const GamesPage = () => {
                                 </div>
                             </div>
                         </div>
-
+                        <div>
+                            <AddGames />
+                        </div>
                     </div>
                 ))}
                 <div className='console_card'>

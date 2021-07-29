@@ -11,6 +11,7 @@ class Game(db.Model):
         db.Integer, db.ForeignKey("collections.id"), nullable=False)
     value = db.Column(db.Numeric(10, 2))
     genre = db.Column(db.String(255), nullable=False)
+    release_date = db.Column(db.String(255))
 
     consoles = db.relationship('Console', back_populates='games')
     reviews = db.relationship('Review', back_populates='games')
@@ -19,8 +20,9 @@ class Game(db.Model):
         return{
             'id': self.id,
             'title': self.title,
-            'console.id': self.console_id,
+            'console_id': self.console_id,
             'collection_id': self.collection_id,
             'value': self.value,
             'genre': self.genre,
+            'release_date': self.release_date
         }
