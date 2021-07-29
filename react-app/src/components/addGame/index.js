@@ -1,9 +1,9 @@
 import React from 'react'
 import GameModal from '../createGameModal'
-import priceFinder from '../../store/game'
 
 
-const AddGames = () => {
+
+const AddGames = ({ console }) => {
 
 
 
@@ -11,7 +11,7 @@ const AddGames = () => {
 
     return (
         <>
-            <GameModal />
+            <GameModal console={console} />
         </>
 
     )

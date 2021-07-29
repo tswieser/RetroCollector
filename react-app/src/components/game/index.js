@@ -24,6 +24,7 @@ const GamesPage = () => {
     const collections = useSelector((state) => Object.values(state.collections))
     const collection = collections.find((collection) => collection?.id === +id)
 
+    // console.log(collections)
 
     const consoles = useSelector((state) => Object.values(state.consoles))
 
@@ -63,7 +64,7 @@ const GamesPage = () => {
                             </div>
                         </div>
                         <div>
-                            <AddGames />
+                            <AddGames console={console} />
                         </div>
                     </div>
                 ))}

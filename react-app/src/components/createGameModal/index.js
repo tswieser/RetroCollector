@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
-// import CreateGame from "./CreateGame";
+import CreateGame from "./CreateGame";
 
 
-function GameModal() {
+function GameModal({ consoleObj }) {
     const [showModal, setShowModal] = useState(false);
 
     return (
@@ -13,7 +13,7 @@ function GameModal() {
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    {/* <CreateGame setShowModal={setShowModal} /> */}
+                    <CreateGame setShowModal={setShowModal} consoleObj={consoleObj} />
                 </Modal>
             )}
         </>

@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session'
 import collectionsReducer from './collections'
 import consolesReducer from './console'
+import gamesReducer from './game'
 
 const rootReducer = combineReducers({
   session,
   collections: collectionsReducer,
-  consoles: consolesReducer
+  consoles: consolesReducer,
+  games: gamesReducer
 });
 
 
