@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { priceFinder } from '../../store/game'
 
 
-
-
 function CreateGame({ setShowModal }) {
     const dispatch = useDispatch()
     const [gameSearch, setGameSearch] = useState("")
@@ -21,18 +19,28 @@ function CreateGame({ setShowModal }) {
 
 
     const searchedGame = useSelector(state => state.games.search)
+    const games = useSelector(state => Object.values(state.games))
     const addDecimal = (num) => (num / 100).toFixed
 
-    // useEffect(() => {
-    //     let newVal = (CibValue / 100).toFixed(2);
-    //     setCibValue(newVal)
-    // }, [condition])
+    useEffect(() => {
+        if (games.length) {
+            if (condition === "CIB") {
+                let newVal = searchedGame['cib-price']
+                let formatNum = (newVal / 100).toFixed(2)
+                setDisplay(formatNum)
+            } else if (condition === "loose") {
+                let newVal = searchedGame['loose-price']
+                let formatNum = (newVal / 100).toFixed(2)
+                setDisplay(formatNum)
+            }
+        }
+    }, [CibValue, condition]);
+
 
     const onSearch = async (e) => {
         e.preventDefault()
         const gameData = await dispatch(priceFinder(gameSearch))
 
-        console.log(gameData)
         if (gameData.id) {
             setTitle(gameData['product-name'])
             setGenre(gameData['genre'])
@@ -61,11 +69,6 @@ function CreateGame({ setShowModal }) {
         }
         setShowModal(false);
     }
-
-
-
-
-
 
 
     return (
@@ -114,12 +117,10 @@ function CreateGame({ setShowModal }) {
                     <div className="radio_buttons">
                         Loose<input type="radio" value="loose" checked={condition === "loose"}
                             onChange={(e) => { setCondition(e.target.value) }}
-                            onClick={() => setValue(LooseValue)}
                         >
                         </input>
                         CIB<input type="radio" value="CIB" checked={condition === "CIB"}
                             onChange={(e) => { setCondition(e.target.value) }}
-                            onClick={() => setValue(CibValue)}
                         >
                         </input>
 
@@ -130,7 +131,7 @@ function CreateGame({ setShowModal }) {
                         </label>
                     </div>
                     <div>
-                        <input id="value" className="collection_description" name="value" type="text" value={`${value}`} onChange={(e) => setValue(e.target.value)} />
+                        <input id="value" className="collection_description" name="value" type="number" value={`${value ? value : display}`} onChange={(e) => setValue(e.target.value)} />
                     </div>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
