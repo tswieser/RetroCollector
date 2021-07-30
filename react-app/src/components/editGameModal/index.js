@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
-import CreateGame from "./CreateGame";
+import EditGame from "./editGame";
 
-
-function GameModal({ consoleInfo }) {
+function EditGameModal({ game }) {
     const [showModal, setShowModal] = useState(false);
-    
+
+
     return (
         <>
             <div onClick={() => setShowModal(true)}>
-                <i class="fas fa-plus fa-2x"></i>
+                <i class="fas fa-edit"></i>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <CreateGame setShowModal={setShowModal} consoleInfo={consoleInfo} />
+                    <EditGame game={game} setShowModal={setShowModal} />
                 </Modal>
             )}
         </>
     );
 }
 
-export default GameModal;
+export default EditGameModal;

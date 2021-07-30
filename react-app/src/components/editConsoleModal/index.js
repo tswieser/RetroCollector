@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import EditConsole from "./editConsole";
 
-function EditConsoleModal({ console }) {
+function EditConsoleModal({ consoleInfo }) {
     const [showModal, setShowModal] = useState(false);
 
 
@@ -13,7 +13,7 @@ function EditConsoleModal({ console }) {
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <EditConsole console={console} setShowModal={setShowModal} />
+                    <EditConsole consoleInfo={consoleInfo} setShowModal={setShowModal} />
                 </Modal>
             )}
         </>

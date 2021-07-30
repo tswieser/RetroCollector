@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { priceFinder } from '../../store/game'
+import { postGames } from '../../store/game'
 
 
-function CreateGame({ setShowModal }) {
+function CreateGame({ setShowModal, consoleInfo }) {
     const dispatch = useDispatch()
     const [gameSearch, setGameSearch] = useState("")
     const [title, setTitle] = useState('')
@@ -12,26 +13,25 @@ function CreateGame({ setShowModal }) {
     const [value, setValue] = useState(CibValue)
     const [genre, setGenre] = useState('')
     const [release_date, setReleaseDate] = useState('')
-    const [display, setDisplay] = useState('')
     const [errors, setErrors] = useState('')
     const [condition, setCondition] = useState("")
-    console.log(value)
 
 
     const searchedGame = useSelector(state => state.games.search)
     const games = useSelector(state => Object.values(state.games))
-    const addDecimal = (num) => (num / 100).toFixed
+    const addDecimal = (num) => (num / 100).toFixed(2)
 
+  
     useEffect(() => {
         if (games.length) {
-            if (condition === "CIB") {
+            if (condition === "CIB" && games[games.length - 1]["console-name"]) {
                 let newVal = searchedGame['cib-price']
                 let formatNum = (newVal / 100).toFixed(2)
-                setDisplay(formatNum)
-            } else if (condition === "loose") {
+                setValue(formatNum)
+            } else if (condition === "loose" && games[games.length - 1]["console-name"]) {
                 let newVal = searchedGame['loose-price']
                 let formatNum = (newVal / 100).toFixed(2)
-                setDisplay(formatNum)
+                setValue(formatNum)
             }
         }
     }, [CibValue, condition]);
@@ -57,12 +57,12 @@ function CreateGame({ setShowModal }) {
         e.preventDefault()
         const newGame = {
             title,
-            console_id: console.id,
-            value: CibValue,
+            collection_id: consoleInfo.collection_id,
+            value,
             genre,
             release_date
         }
-        const data = await dispatch()
+        const data = await dispatch(postGames(consoleInfo.id, newGame))
         if (data.errors) {
             setErrors(data.errors);
             return
@@ -131,7 +131,7 @@ function CreateGame({ setShowModal }) {
                         </label>
                     </div>
                     <div>
-                        <input id="value" className="collection_description" name="value" type="number" value={`${value ? value : display}`} onChange={(e) => setValue(e.target.value)} />
+                        <input id="value" className="collection_description" name="value" type="number" value={`${value}`} onChange={(e) => setValue(e.target.value)} />
                     </div>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">

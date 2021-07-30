@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import DeleteConsole from "./deleteConsole";
 
-function DeleteConsoleModal({ console }) {
+function DeleteConsoleModal({ consoleInfo }) {
     const [showModal, setShowModal] = useState(false);
 
     return (
@@ -12,7 +12,7 @@ function DeleteConsoleModal({ console }) {
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <DeleteConsole console={console} setShowModal={setShowModal} />
+                    <DeleteConsole consoleInfo={consoleInfo} setShowModal={setShowModal} />
                 </Modal>
             )}
         </>

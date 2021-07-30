@@ -17,14 +17,13 @@ const GamesPage = () => {
     useEffect(() => {
         dispatch(getCollections())
         dispatch(getConsoles(id))
+
     }, [dispatch])
 
 
 
     const collections = useSelector((state) => Object.values(state.collections))
     const collection = collections.find((collection) => collection?.id === +id)
-
-    // console.log(collections)
 
     const consoles = useSelector((state) => Object.values(state.consoles))
 
@@ -40,31 +39,31 @@ const GamesPage = () => {
                 </div>
             </div>
             <div className="cards_container">
-                {consoles.map((console) => (
+                {consoles.map((consoleInfo) => (
                     <div className='console_card'>
                         <div className="cardHeader">
                             <div className="imgContainer" >
-                                <img className="console_img" src={console.console_img_url} />
+                                <img className="console_img" src={consoleInfo.console_img_url} />
                             </div>
                             <div className="console_info">
                                 <div className="console_name">
-                                    <h2>{console.name}</h2>
+                                    <h2>{consoleInfo.name}</h2>
                                 </div>
                                 <div className="console_name">
-                                    <h3>{`Value: $${console.value}`}</h3>
+                                    <h3>{`Value: $${consoleInfo.value}`}</h3>
                                 </div>
                             </div>
                             <div className="icon_container">
                                 <div className="edit_container">
-                                    <EditConsoleModal console={console} />
+                                    <EditConsoleModal consoleInfo={consoleInfo} />
                                 </div>
                                 <div className="delete_container">
-                                    <DeleteConsoleModal console={console} />
+                                    <DeleteConsoleModal consoleInfo={consoleInfo} />
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <AddGames console={console} />
+                            <AddGames consoleInfo={consoleInfo} />
                         </div>
                     </div>
                 ))}

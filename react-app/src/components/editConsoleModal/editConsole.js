@@ -1,18 +1,16 @@
-import React, { useState } from 'react'
+ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { putConsole } from '../../store/console'
 
 
 
-
-
-function EditConsole({ setShowModal, console }) {
+function EditConsole({ setShowModal, consoleInfo }) {
     const dispatch = useDispatch();
 
     const [errors, setErrors] = useState([]);
-    const [name, setName] = useState(console.name);
-    const [value, SetValue] = useState(console.value);
-    const [imgUrl, setImgUrl] = useState(console.console_img_url);
+    const [name, setName] = useState(consoleInfo.name);
+    const [value, SetValue] = useState(consoleInfo.value);
+    const [imgUrl, setImgUrl] = useState(consoleInfo.console_img_url);
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -21,7 +19,7 @@ function EditConsole({ setShowModal, console }) {
             value,
             console_img_url: imgUrl
         }
-        const data = await dispatch(putConsole(console.id, newConsole))
+        const data = await dispatch(putConsole(consoleInfo.id, newConsole))
         if (data.errors) {
             setErrors(data.errors);
             return
@@ -34,7 +32,7 @@ function EditConsole({ setShowModal, console }) {
             <div className="form_container">
                 <form onSubmit={handleSubmit}>
                     <div className="title_container">
-                        <h1 className='form_title'>Edit Collection</h1>
+                        <h1 className='form_title'>Edit Console</h1>
                     </div>
                     <ul className="form_error_container">
                         {errors &&
@@ -73,17 +71,10 @@ function EditConsole({ setShowModal, console }) {
                             Edit Console
                         </button>
                     </div>
-
                 </form>
-
             </div>
-
         </>
     )
-
-
-
-
 }
 
 export default EditConsole

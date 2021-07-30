@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
-import CreateGame from "./CreateGame";
+import DeleteGame from "./deleteGame";
 
-
-function GameModal({ consoleInfo }) {
+function DeleteGameModal({ game }) {
     const [showModal, setShowModal] = useState(false);
-    
+
     return (
         <>
             <div onClick={() => setShowModal(true)}>
-                <i class="fas fa-plus fa-2x"></i>
+                <i class="fas fa-trash-alt"></i>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <CreateGame setShowModal={setShowModal} consoleInfo={consoleInfo} />
+                    <DeleteGame game={game} setShowModal={setShowModal} />
                 </Modal>
             )}
         </>
     );
 }
 
-export default GameModal;
+export default DeleteGameModal;
