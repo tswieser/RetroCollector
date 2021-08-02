@@ -21,7 +21,7 @@ const AddGames = ({ consoleInfo }) => {
         }
     })
 
-    console.log(gamesArr)
+
 
     useEffect(() => {
         dispatch(getGames(consoleInfo.id))

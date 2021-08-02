@@ -15,7 +15,7 @@ const CollectionsPage = () => {
     }, [dispatch])
 
     let collections = useSelector((state) => Object.values(state.collections))
-    console.log(collections[0])
+  
     return (
         <>
             <div className="cards_container">

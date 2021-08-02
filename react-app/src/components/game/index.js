@@ -20,6 +20,28 @@ const GamesPage = () => {
 
     }, [dispatch])
 
+    const games = useSelector((state) => Object.values(state.games))
+
+
+
+
+    const valueFinder = (consoleId) => {
+        let counter = 0
+        for (let i = 0; i < games.length; i++) {
+            let game = games[i]
+            if (game.console_id === consoleId) {
+                counter += game.value
+            }
+        }
+        return counter.toFixed(2)
+    }
+    console.log(valueFinder(1))
+
+    const totalVal = (consoleVal, gamesVal) => {
+        let newTotal = 0
+        newTotal += consoleVal + +gamesVal
+        return newTotal
+    }
 
 
     const collections = useSelector((state) => Object.values(state.collections))
@@ -27,6 +49,7 @@ const GamesPage = () => {
 
     const consoles = useSelector((state) => Object.values(state.consoles))
 
+    console.log(totalVal(130, valueFinder(1)))
 
     return (
         <>
@@ -50,7 +73,13 @@ const GamesPage = () => {
                                     <h2>{consoleInfo.name}</h2>
                                 </div>
                                 <div className="console_name">
-                                    <h3>{`Value: $${consoleInfo.value}`}</h3>
+                                    <h3>{`Console Value: $${consoleInfo.value}`}</h3>
+                                </div>
+                                <div className="console_name">
+                                    <h3>{`All ${consoleInfo.name} Game Values: $${valueFinder(consoleInfo.id)}`}</h3>
+                                </div>
+                                <div className="console_name">
+                                    <h3>{`Total: $${((consoleInfo.value) + +valueFinder(consoleInfo.id)).toFixed(2)}`}</h3>
                                 </div>
                             </div>
                             <div className="icon_container">

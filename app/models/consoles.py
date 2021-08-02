@@ -18,7 +18,7 @@ class Console(db.Model):
         return{
             'id': self.id,
             'name': self.name,
-            'value': int(self.value),
+            'value': float(self.value),
             'collection_id': self.collection_id,
             'console_img_url': self.console_img_url
         }

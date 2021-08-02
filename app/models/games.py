@@ -22,7 +22,7 @@ class Game(db.Model):
             'title': self.title,
             'console_id': self.console_id,
             'collection_id': self.collection_id,
-            'value': int(self.value),
+            'value': float(self.value),
             'genre': self.genre,
             'release_date': self.release_date
         }
