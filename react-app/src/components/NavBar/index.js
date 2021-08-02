@@ -12,11 +12,6 @@ const NavBar = () => {
     if (sessionUser) {
         sessionLinks = (
             <div className="user_btns">
-                <div>
-                    <NavLink to='/collections' exact={true} activeClassName='active'>
-                        Collections
-                    </NavLink>
-                </div>
                 <div className="logout_container">
                     <LogoutButton />
                 </div>
@@ -44,21 +39,44 @@ const NavBar = () => {
         <nav >
             <ul id="nav_container" >
                 <li className="nav_bar">
-                    <NavLink to='/' exact={true} activeClassName='active'>
+                    <div className="site_title">
+                        {/* <i class="fas fa-gamepad fa-4x"></i> */}
+                        <div className="controller"></div>
+                        <h1>Retro Collector</h1>
+                    </div>
+                    {/* <NavLink to='/' exact={true} activeClassName='active'>
                         Home
-                    </NavLink>
+                    </NavLink> */}
                     {sessionLinks}
                 </li>
             </ul>
             <ul id="side_bar_container">
                 <li className="side_bar">
-                    <NavLink to='/' exact={true} activeClassName='active'>
-                        Home
-                    </NavLink>
-                    {sessionLinks}
+                    <div className="Home_side_container">
+                        <NavLink style={{ textDecoration: 'none', color: "#b3b3b3" }} to='/' exact={true} activeClassName='active'
+                            activeStyle={{
+                                fontWeight: 'bold',
+                                color: 'white',
+                                background_Color: "#b3b3b3"
+                            }}
+                        >
+                            <i class="fas fa-home fa-1x"></i> Home
+                        </NavLink>
+                    </div>
+                    <div>
+                        <NavLink style={{ textDecoration: 'none', color: "#b3b3b3" }} to='/collections' exact={true} activeClassName='active'
+                            activeStyle={{
+                                fontWeight: 'bold',
+                                color: 'white',
+                                background_Color: "#b3b3b3"
+                            }}
+                        >
+                            <i class="fas fa-stream"></i> Collections
+                        </NavLink>
+                    </div>
                 </li>
             </ul>
-        </nav>
+        </nav >
     );
 }
 
