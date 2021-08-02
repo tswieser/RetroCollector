@@ -40,11 +40,18 @@ const NavBar = () => {
             </div>
         );
     }
-
     return (
         <nav >
             <ul id="nav_container" >
                 <li className="nav_bar">
+                    <NavLink to='/' exact={true} activeClassName='active'>
+                        Home
+                    </NavLink>
+                    {sessionLinks}
+                </li>
+            </ul>
+            <ul id="side_bar_container">
+                <li className="side_bar">
                     <NavLink to='/' exact={true} activeClassName='active'>
                         Home
                     </NavLink>

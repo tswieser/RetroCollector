@@ -35,21 +35,14 @@ const GamesPage = () => {
         }
         return counter.toFixed(2)
     }
-    console.log(valueFinder(1))
 
-    const totalVal = (consoleVal, gamesVal) => {
-        let newTotal = 0
-        newTotal += consoleVal + +gamesVal
-        return newTotal
-    }
+
 
 
     const collections = useSelector((state) => Object.values(state.collections))
     const collection = collections.find((collection) => collection?.id === +id)
 
     const consoles = useSelector((state) => Object.values(state.consoles))
-
-    console.log(totalVal(130, valueFinder(1)))
 
     return (
         <>
