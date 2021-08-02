@@ -1,7 +1,7 @@
 /* TODO Add site wide styles */
 body{
     margin:0px;
-    background-image: url('./backgorund.jpg');
+    background-image: url('./images/backgorund.jpg');
     background-size:cover;
     background-repeat:no-repeat;
 }

@@ -15,7 +15,7 @@ const CollectionsPage = () => {
     }, [dispatch])
 
     let collections = useSelector((state) => Object.values(state.collections))
-  
+
     return (
         <>
             <div className="cards_container">
@@ -42,7 +42,7 @@ const CollectionsPage = () => {
                         </div>
                     </div>
                 ))}
-                <div className="collection_card">
+                <div className="add_collection_card">
                     <CollectionModal />
                     <h3>Create New Collection</h3>
                 </div>
