@@ -85,9 +85,16 @@ const GamesPage = () => {
                         </div>
                     </div>
                 ))}
+
                 <div className='console_card'>
-                    <ConsoleModal id={id} />
-                    <h3>Add A New Console</h3>
+                    <div className="console_plus">
+                        <div className="console_plus_button">
+                            <ConsoleModal id={id} />
+                        </div>
+                        <div>
+                            <h3>Add A New Console</h3>
+                        </div>
+                    </div>
                 </div>
 
             </div>

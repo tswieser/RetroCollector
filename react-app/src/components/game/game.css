@@ -19,7 +19,6 @@ font-weight: bold;
 .console_img{
     height:200px;
     width:15em;
-    /* margin-left:30px; */
     margin-top:10px;
     border-radius: 4px;
 }
@@ -52,6 +51,7 @@ font-weight: bold;
 }
 
 .console_info{
+    margin-left:15px;
     height:200px;
 }
 
@@ -64,3 +64,13 @@ font-weight: bold;
 }
 
 
+.console_plus{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom:30px;
+}
+
+.console_plus_button:hover{
+    cursor: pointer;
+}
