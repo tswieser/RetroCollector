@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { putCollection } from '../../store/collections'
-
+import "./editCollection.css"
 
 function EditCollection({ setShowModal, collection }) {
     const dispatch = useDispatch();
@@ -28,10 +28,10 @@ function EditCollection({ setShowModal, collection }) {
 
     return (
         <>
-            <div className="form_container">
+            <div className="edit_form_container">
                 <form onSubmit={handleSubmit}>
                     <div className="title_container">
-                        <h1 className='form_title'>Edit Collection</h1>
+                        <h1 className='edit_form_title'>Edit Collection</h1>
                     </div>
                     <ul className="form_error_container">
                         {errors &&
@@ -47,7 +47,7 @@ function EditCollection({ setShowModal, collection }) {
                         </label>
                     </div>
                     <div>
-                        <input id="name" className="collection_name" name="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                        <input id="name" className="collection_input_name" name="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
@@ -55,7 +55,7 @@ function EditCollection({ setShowModal, collection }) {
                         </label>
                     </div>
                     <div>
-                        <input id="imgUrl" className="collection_imgUrl" name="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
+                        <input id="imgUrl" className="collection_input_name" name="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
                     </div>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
@@ -63,10 +63,10 @@ function EditCollection({ setShowModal, collection }) {
                         </label>
                     </div>
                     <div>
-                        <textarea id="description" className="collection_description" name="description" type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+                        <textarea id="description" className="collection_input_description" name="description" type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
                     </div>
                     <div className="button_container">
-                        <button className="form_button" type="submit">
+                        <button className="form_edit_button" type="submit">
                             Edit Collection
                         </button>
                     </div>

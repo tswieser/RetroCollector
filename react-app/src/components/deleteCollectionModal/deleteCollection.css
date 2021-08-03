@@ -1,0 +1,28 @@
+.button_container{
+display:flex;
+}
+
+.delete_form_button{
+    background-color: rgb(131, 128, 128);
+    color:white;
+    border-radius:16px;
+    border:1px solid lightgrey;
+    padding: 0.75em;
+    font-weight: 600;
+    width: 125px;
+    transition:background-color;
+    margin-top:60px;
+    margin-left:6em;
+}
+
+.delete_form_button:hover{
+    background-color: rgb(80, 77, 77);
+    cursor:pointer;
+}
+
+.delete_title_container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top:6em;
+}

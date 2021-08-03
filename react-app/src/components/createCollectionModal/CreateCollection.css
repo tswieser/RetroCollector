@@ -1,3 +1,52 @@
 .plus_div{
     margin-top:80px;
 }
+
+.collection_input_name{
+    border-radius: 2px;
+    text-indent: 5px;
+    width: 100%;
+    height:30px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #f1f1f1;
+    margin-top:3px;
+}
+
+.collection_input_description{
+    border-radius: 2px;
+    text-indent: 5px;
+    width: 100%;
+    height:50px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #f1f1f1;
+    margin-top:3px;
+}
+
+.form_label_container{
+margin-left:6px;
+margin-top:5px;
+}
+
+.form_button{
+    background-color: rgb(131, 128, 128);
+    color:white;
+    border-radius:16px;
+    border:1px solid lightgrey;
+    padding: 0.75em;
+    font-weight: 600;
+    width: 200px;
+    transition:background-color;
+    margin-top:15px;
+    margin-left:6em;
+}
+
+.form_button:hover{
+    background-color: rgb(80, 77, 77);
+    cursor:pointer;
+}
+
+.form_container{
+    margin-top:60px;
+}

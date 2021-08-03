@@ -43,11 +43,11 @@ function CreateCollection({ setShowModal }) {
                     </ul>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
-                        Collection Name
+                            Collection Name
                         </label>
                     </div>
                     <div>
-                        <input id="name" className="collection_name" name="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                        <input id="name" className="collection_input_name" name="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
@@ -55,7 +55,7 @@ function CreateCollection({ setShowModal }) {
                         </label>
                     </div>
                     <div>
-                        <input id="imgUrl" className="collection_imgUrl" name="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
+                        <input id="imgUrl" className="collection_input_name" name="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
                     </div>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
@@ -63,7 +63,7 @@ function CreateCollection({ setShowModal }) {
                         </label>
                     </div>
                     <div>
-                        <textarea id="description" className="collection_description" name="description" type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+                        <textarea id="description" className="collection_input_description" name="description" type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
                     </div>
                     <div className="button_container">
                         <button className="form_button" type="submit">

@@ -23,8 +23,6 @@ const GamesPage = () => {
     const games = useSelector((state) => Object.values(state.games))
 
 
-
-
     const valueFinder = (consoleId) => {
         let counter = 0
         for (let i = 0; i < games.length; i++) {
@@ -35,8 +33,6 @@ const GamesPage = () => {
         }
         return counter.toFixed(2)
     }
-
-
 
 
     const collections = useSelector((state) => Object.values(state.collections))
@@ -50,7 +46,7 @@ const GamesPage = () => {
                 <div className="collection_title">
                     <h1>{collection?.name} Collection</h1>
                 </div>
-                <div>
+                <div className="collection_title">
                     <h2>{collection?.description}</h2>
                 </div>
             </div>
@@ -63,19 +59,19 @@ const GamesPage = () => {
                             </div>
                             <div className="console_info">
                                 <div className="console_name">
-                                    <h2>{consoleInfo.name}</h2>
+                                    <h2 className="consoleInfo_name">{consoleInfo.name}</h2>
                                 </div>
-                                <div className="console_name">
-                                    <h3>{`Console Value: $${consoleInfo.value}`}</h3>
+                                <div className="console_value">
+                                    {`Console Value: $${consoleInfo.value}`}
                                 </div>
-                                <div className="console_name">
-                                    <h3>{`All ${consoleInfo.name} Game Values: $${valueFinder(consoleInfo.id)}`}</h3>
+                                <div className="console_value">
+                                    {`All ${consoleInfo.name} Game Values: $${valueFinder(consoleInfo.id)}`}
                                 </div>
-                                <div className="console_name">
-                                    <h3>{`Total: $${((consoleInfo.value) + +valueFinder(consoleInfo.id)).toFixed(2)}`}</h3>
+                                <div className="console_value" >
+                                    {`Total: $${((consoleInfo.value) + +valueFinder(consoleInfo.id)).toFixed(2)}`}
                                 </div>
                             </div>
-                            <div className="icon_container">
+                            <div className="console_icon_container">
                                 <div className="edit_container">
                                     <EditConsoleModal consoleInfo={consoleInfo} />
                                 </div>

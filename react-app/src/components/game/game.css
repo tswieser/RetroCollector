@@ -1,3 +1,21 @@
+.games_header{
+    color:#a9aaac;
+}
+.collection_title{
+margin-left:30em;
+font-weight: bold;
+}
+
+.consoleInfo_name{
+font-size: 30px;
+font-weight: bold;
+}
+
+.console_value{
+    margin:8px;
+    font-weight: bold;
+}
+
 .console_img{
     height:200px;
     width:15em;
@@ -8,21 +26,25 @@
 
 .console_card{
     display:flex;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    color:#a9aaac;
     box-shadow: 0 20px 48px rgb(0 0 0 / 35%);
     border-radius: 8px;
     margin:3em;
     height:360px;
     width:80em;
     flex-direction:column;
+    background-image:
+    linear-gradient(
+        #4b4b4b, rgb(119, 119, 119) 90%
+    );
 
 }
-
 .cardHeader{
     display:flex;
     border-bottom: 1px solid black;
     width:80em;
     height:250px;
+    box-shadow: 0 20px 48px rgb(0 0 0 / 10%);
 }
 
 .imgContainer{
@@ -31,4 +53,12 @@
 
 .console_info{
     height:200px;
+}
+
+.console_icon_container{
+    display:flex;
+    align-items: flex-end;
+    margin-left: 41em;
+    margin-bottom:20px;
+
 }
