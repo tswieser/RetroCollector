@@ -72,11 +72,12 @@
 
 #side_bar_container{
     display:absolute;
+    /* position: fixed; */
     background-color:black;
     color:#b3b3b3;
     margin-top:0px;
     width:10em;
-    height:50em;
+    height:42em;
     float:left;
     list-style-type: none;
     font-size: 25px;
@@ -113,4 +114,22 @@ display:flex;
     width:120px;
 
 
+}
+
+.gitHub_icon, .linkedIn_icon{
+    color:white
+}
+
+.gitHub_icon:hover, .linkedIn_icon:hover{
+    cursor: pointer;
+    color:#b3b3b3
+}
+
+.social_links{
+    display:flex;
+    margin-top:5em;
+}
+
+.linkedIn_icon{
+    margin-left:40px;
 }

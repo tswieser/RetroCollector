@@ -71,6 +71,24 @@ const NavBar = () => {
                         </NavLink>
                     </div>
                 </li>
+                <li>
+                    <div className="social_links">
+                        <div className="gitHub">
+                            <a href="https://github.com/tswieser/RetroCollector">
+                                <div className="gitHub_icon" >
+                                    <i class="fab fa-github fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div className="linkedIn">
+                            <a href="https://www.linkedin.com/in/timothy-wieser-722b86215/">
+                                <div className="linkedIn_icon" >
+                                    <i class="fab fa-linkedin fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </nav >
     );
