@@ -52,7 +52,6 @@ const LoginForm = () => {
             ))}
           </div>
           <div>
-
             <div className="form_label_container">
               <label htmlFor='email'>Email</label>
             </div>
