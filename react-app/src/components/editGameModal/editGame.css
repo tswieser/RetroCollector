@@ -31,3 +31,17 @@
     background-color: rgb(80, 77, 77);
     cursor:pointer;
 }
+
+.checkbox_button{
+    border:none;
+    background-color: rgb(131, 128, 128);
+
+}
+
+.radio_buttons{
+    display:flex;
+}
+
+.cib_button{
+    margin-left:25px;
+}

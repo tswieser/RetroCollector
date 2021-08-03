@@ -1,0 +1,68 @@
+.add_game_container{
+    display:flex;
+    height:55px;
+
+}
+
+.add_game{
+    margin-left:30px;
+    margin-top:15px;
+}
+
+.plus_button{
+    margin-left:15px;
+    margin-top:10px;
+}
+
+.add_game_container:hover{
+ cursor: pointer;
+ background-color:#606061
+}
+
+.search_button{
+border:none;
+margin-left:5px;
+}
+
+.search_button:hover{
+    cursor:pointer;
+}
+
+.search_container{
+    border-radius: 2px;
+    text-indent: 5px;
+    width: 300px;
+    height:30px;
+    border: none;
+    background-color: #f1f1f1;
+    margin-top:3px;
+}
+
+.search_field{
+    height:28px;
+    width:250px;
+    border:none;
+    background-color: #f1f1f1;
+}
+
+.game_container_modal{
+    margin-top:60px;
+}
+
+.game_form_button{
+    background-color: rgb(131, 128, 128);
+    color:white;
+    border-radius:16px;
+    border:1px solid lightgrey;
+    padding: 0.75em;
+    font-weight: 600;
+    width: 200px;
+    transition:background-color;
+    margin-top:15px;
+    margin-left:4em;
+}
+
+.game_form_button:hover{
+    background-color: rgb(80, 77, 77);
+    cursor:pointer;
+}
