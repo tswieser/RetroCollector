@@ -1,13 +1,93 @@
 .logOut_btn{
     font-size: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
     position: absolute;
     background-color:white;
     border-radius: 20px;
-    border:1px solid lightgrey;
+    border:none;
     box-shadow: 0 20px 48px rgb(0 0 0 / 10%);
     height:45px;
     width:85px;
     right:5em;
     top:1em;
-    }
+}
+
+.logOut_btn:hover{
+    cursor: pointer;
+    background-color:rgb(131, 128, 128);
+}
+
+
+.login_container{
+    display:flex;
+    color:#a9aaac;
+    box-shadow: 0 20px 48px rgb(0 0 0 / 35%);
+    border-radius: 8px;
+    margin:3em;
+    margin-left:50em;
+    height:28.5em;
+    width:30em;
+    flex-direction:column;
+    background-image:
+    linear-gradient(
+        #4b4b4b, rgb(119, 119, 119) 90%
+    );
+
+}
+
+.login_title_container {
+    margin-left:4em;
+}
+
+.login_input_name{
+    border-radius: 2px;
+    text-indent: 5px;
+    width: 200px;
+    height:30px;
+    margin-bottom:2px;
+    border: none;
+    background-color: #f1f1f1;
+    margin-top:3px;
+}
+
+.login_info{
+margin-left:9em;
+}
+
+.signUp_link{
+    margin-left:30px;
+}
+
+.login_submit_btn{
+    background-color: white;
+    border-radius:16px;
+    border:none;
+    padding: 0.75em;
+    font-weight: 600;
+    width: 150px;
+    transition:background-color;
+    margin-top:30px;
+    margin-left:20px;
+}
+
+.login_submit_btn:hover{
+    cursor: pointer;
+    background-color:rgb(231, 231, 231);
+}
+
+.demo_user_button{
+    background-color: white;
+    border-radius:16px;
+    border:none;
+    padding: 0.75em;
+    font-weight: 600;
+    width: 250px;
+    transition:background-color;
+    margin-top:5px;
+    margin-left:8em;
+}
+
+.demo_user_button:hover{
+    cursor: pointer;
+    background-color:rgb(231, 231, 231);
+}

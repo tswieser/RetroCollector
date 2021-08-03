@@ -27,7 +27,7 @@ const NavBar = () => {
                     </NavLink>
                 </div>
                 <div>
-                    <NavLink to='/login' exact={true} activeClassName='active'>
+                    <NavLink style={{ textDecoration: 'none' }} className="logIn_button" to='/login' exact={true} activeClassName='active'>
                         LOG IN
                     </NavLink>
                 </div>
@@ -40,13 +40,9 @@ const NavBar = () => {
             <ul id="nav_container" >
                 <li className="nav_bar">
                     <div className="site_title">
-                        {/* <i class="fas fa-gamepad fa-4x"></i> */}
                         <div className="controller"></div>
                         <h1>Retro Collector</h1>
                     </div>
-                    {/* <NavLink to='/' exact={true} activeClassName='active'>
-                        Home
-                    </NavLink> */}
                     {sessionLinks}
                 </li>
             </ul>

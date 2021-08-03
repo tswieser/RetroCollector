@@ -40,44 +40,68 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type='submit'>Login</button>
-        <p>
-          Don't have an account yet?{" "}
-          <Link to="/sign-up" >
-            <span>Create one here</span>
-          </Link>
-        </p>
+    <div className='login_container'>
+      <form onSubmit={onLogin}>
+        <div className="login_info">
+          <div className="login_title_container">
+            <h1 className="login_title" >Log In</h1>
+          </div>
+          <div>
+            {errors.map((error, ind) => (
+              <div className="errors" key={ind}>{error}</div>
+            ))}
+          </div>
+          <div>
+
+            <div className="form_label_container">
+              <label htmlFor='email'>Email</label>
+            </div>
+            <input
+              className="login_input_name"
+              name='email'
+              type='text'
+              placeholder='Email'
+              value={email}
+              onChange={updateEmail}
+            />
+          </div>
+          <div>
+            <div className="form_label_container">
+              <label htmlFor='password'>Password</label>
+            </div>
+            <input
+              className="login_input_name"
+              name='password'
+              type='password'
+              placeholder='Password'
+              value={password}
+              onChange={updatePassword}
+            />
+            <div>
+              <button className="login_submit_btn" type='submit'>Login</button>
+            </div>
+            <p>
+              <div className="link_container">
+                <div>
+                  Don't have an account yet?{" "}
+                </div>
+                <div className="signUp_link">
+                  <Link to="/sign-up" >
+                    <span>Create one here</span>
+                  </Link>
+                </div>
+              </div>
+            </p>
+          </div>
+
+        </div>
         <button
+          className="demo_user_button"
           onClick={demoLogin}>
-          Or log in as a <span>Demo user</span>
+          Log in as a <span>Demo user</span>
         </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 
