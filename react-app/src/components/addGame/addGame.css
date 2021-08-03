@@ -3,3 +3,41 @@
     justify-content: space-around;
     border-bottom: 1px solid lightgrey;
 }
+
+.game_table{
+width: 100%;
+}
+
+.game_table td {
+text-align:center;
+border-bottom: 1px solid lightgrey;
+padding:5px;
+}
+.game_table tr:hover {
+background-color:#606061
+}
+
+
+.game_table th {
+    border-bottom: 1px solid lightgrey;
+}
+
+
+.edit_game_button:hover{
+    cursor: pointer;
+    color:white
+}
+
+.delete_game_button{
+margin-left: 15px;;
+}
+
+.delete_game_button:hover{
+cursor: pointer;
+color:white
+}
+
+.edit_delete_buttons{
+display:flex;
+justify-content: center;
+}

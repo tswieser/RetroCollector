@@ -1,0 +1,29 @@
+.delete_title_container_div{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game_delete_form_button{
+    background-color: rgb(131, 128, 128);
+    color:white;
+    border-radius:16px;
+    border:1px solid lightgrey;
+    padding: 0.75em;
+    font-weight: 600;
+    width: 125px;
+    transition:background-color;
+    margin-top:60px;
+    margin-left:.5em;
+    margin-right:.5em;
+}
+
+
+.game_delete_form_button:hover{
+    background-color: rgb(80, 77, 77);
+    cursor:pointer;
+}
+.game_delete_button_container{
+display:flex;
+justify-content:center;
+}

@@ -1,7 +1,7 @@
- import React, { useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { putConsole } from '../../store/console'
-
+import "./editConsole.css"
 
 
 function EditConsole({ setShowModal, consoleInfo }) {
@@ -29,10 +29,10 @@ function EditConsole({ setShowModal, consoleInfo }) {
 
     return (
         <>
-            <div className="form_container">
+            <div className="edit_form_container">
                 <form onSubmit={handleSubmit}>
                     <div className="title_container">
-                        <h1 className='form_title'>Edit Console</h1>
+                        <h1 className='edit_console_form_title'>Edit Console</h1>
                     </div>
                     <ul className="form_error_container">
                         {errors &&
@@ -48,7 +48,7 @@ function EditConsole({ setShowModal, consoleInfo }) {
                         </label>
                     </div>
                     <div>
-                        <input id="name" className="collection_name" name="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+                        <input id="name" className="console_input_name" name="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
@@ -56,7 +56,7 @@ function EditConsole({ setShowModal, consoleInfo }) {
                         </label>
                     </div>
                     <div>
-                        <input id="imgUrl" className="collection_imgUrl" name="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
+                        <input id="imgUrl" className="console_input_name" name="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
                     </div>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
@@ -64,10 +64,10 @@ function EditConsole({ setShowModal, consoleInfo }) {
                         </label>
                     </div>
                     <div>
-                        <input id="value" className="collection_description" name="value" type="text" value={value} onChange={(e) => SetValue(e.target.value)} />
+                        <input id="value" className="console_input_name" name="value" type="text" value={value} onChange={(e) => SetValue(e.target.value)} />
                     </div>
                     <div className="button_container">
-                        <button className="form_button" type="submit">
+                        <button className="form_edit_button" type="submit">
                             Edit Console
                         </button>
                     </div>

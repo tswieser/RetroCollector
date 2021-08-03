@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteGame } from '../../store/game'
+import "./deleteGame.css"
 
 function DeleteGame({ setShowModal, game }) {
     const dispatch = useDispatch();
@@ -17,17 +18,26 @@ function DeleteGame({ setShowModal, game }) {
     }
 
     return (
-        <div className="delete_container">
-            <div className="title_container">
-                <h1 className='form_title'>Are You Sure?</h1>
-                <h1>{game.name} will be deleted </h1>
+        <div className="delete_form_container">
+            <div className="delete_title_container_div">
+                <div>
+                    <h1 className='delete_form_title'>Are You Sure?</h1>
+                </div>
+                <div>
+                    <h1 className='delete_form_title'>{game.title}</h1>
+                </div>
+                <div>
+                    <h1 className='delete_form_title'> will be deleted</h1>
+                </div>
             </div>
-            <button className="form_button" onClick={handleDelete} >
-                Delete
-            </button>
-            <button className="form_button" onClick={handleCancel}>
-                Cancel
-            </button>
+            <div className='game_delete_button_container'>
+                <button className="game_delete_form_button" onClick={handleDelete} >
+                    Delete
+                </button>
+                <button className="game_delete_form_button" onClick={handleCancel}>
+                    Cancel
+                </button>
+            </div>
         </div >
 
     )

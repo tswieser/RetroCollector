@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { putGames } from '../../store/game'
-
+import './editGame.css'
 
 function EditGame({ setShowModal, game }) {
     const dispatch = useDispatch()
@@ -32,7 +32,7 @@ function EditGame({ setShowModal, game }) {
         <div className="form_container">
             <form onSubmit={handleSubmit}>
                 <div className="title_container">
-                    <h1 className='form_title'>Edit A Game</h1>
+                    <h1 className='edit_game_form_title'>Edit A Game</h1>
                 </div>
                 <ul className="form_error_container">
                     {errors &&
@@ -48,7 +48,7 @@ function EditGame({ setShowModal, game }) {
                     </label>
                 </div>
                 <div>
-                    <input id="name" className="collection_name" name="name" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+                    <input id="name" className="game_input_name" name="name" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
                 </div>
                 <div className="form_label_container">
                     <label htmlFor="name" className="form_labels">
@@ -56,7 +56,7 @@ function EditGame({ setShowModal, game }) {
                     </label>
                 </div>
                 <div>
-                    <input id="genre" className="collection_imgUrl" name="genre" type="text" value={genre} onChange={(e) => setGenre(e.target.value)} />
+                    <input id="genre" className="game_input_name" name="genre" type="text" value={genre} onChange={(e) => setGenre(e.target.value)} />
                 </div>
                 <div className="form_label_container">
                     <label htmlFor="name" className="form_labels">
@@ -64,7 +64,7 @@ function EditGame({ setShowModal, game }) {
                     </label>
                 </div>
                 <div>
-                    <input id="value" className="collection_description" name="value" type="number" value={`${value}`} onChange={(e) => setValue(e.target.value)} />
+                    <input id="value" className="game_input_name" name="value" type="number" value={`${value}`} onChange={(e) => setValue(e.target.value)} />
                 </div>
                 <div className="form_label_container">
                     <label htmlFor="name" className="form_labels">
@@ -72,10 +72,10 @@ function EditGame({ setShowModal, game }) {
                     </label>
                 </div>
                 <div>
-                    <input placeholder="Optional" id="release_date" className="collection_description" name="release_date" type="text" value={release_date} onChange={(e) => setReleaseDate(e.target.value)} />
+                    <input placeholder="Optional" id="release_date" className="game_input_name" name="release_date" type="text" value={release_date} onChange={(e) => setReleaseDate(e.target.value)} />
                 </div>
-                <div className="button_container">
-                    <button className="form_button" type="submit">
+                <div className="game_button_container">
+                    <button className="form_edit_button_game" type="submit">
                         Edit Game
                     </button>
                 </div>

@@ -30,32 +30,47 @@ const AddGames = ({ consoleInfo }) => {
     return (
         <>
             <div>
-                {gamesArr.map((game) => (
-                    <div className="gameInfo_container">
-                        <div>
-                            {game.title}
-                        </div>
-                        <div>
-                            {`$${game.value}`}
-                        </div>
-                        <div>
-                            {game.genre}
-                        </div>
-                        <div>
-                            {game.release_date}
-                        </div>
-                        <div>
-                            {consoleInfo.name}
-                        </div>
-                        <div>
-                            <EditGameModal game={game} />
-                        </div>
-                        <div>
-                            <DeleteGameModal game={game} />
-                        </div>
-                    </div>
-                ))}
+                <table className="game_table">
+                    <tr>
+                        <th>Title</th>
+                        <th>Value</th>
+                        <th>Genre</th>
+                        <th>Release Date</th>
+                        <th>Console</th>
+                        <th>Edit/ Delete</th>
+                    </tr>
+                    {gamesArr.map((game) => (
+                        <tr>
+                            <td>
+                                {game.title}
+                            </td>
+                            <td>
+                                {`$${game.value}`}
+                            </td>
 
+                            <td>
+                                {game.genre}
+                            </td>
+                            <td>
+                                {game.release_date}
+                            </td>
+                            <td>
+                                {consoleInfo.name}
+                            </td>
+                            <td>
+                                <div className="edit_delete_buttons">
+                                    <div className="edit_game_button">
+                                        <EditGameModal game={game} />
+                                    </div>
+                                    <div className="delete_game_button">
+                                        <DeleteGameModal game={game} />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    ))}
+                </table>
             </div>
             <div>
                 <GameModal consoleInfo={consoleInfo} />

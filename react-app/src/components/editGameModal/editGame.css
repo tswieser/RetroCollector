@@ -1,0 +1,33 @@
+.game_input_name{
+    border-radius: 2px;
+    text-indent: 5px;
+    width: 300px;
+    height:30px;
+    margin-bottom:2px;
+    border: none;
+    background-color: #f1f1f1;
+    margin-top:3px;
+}
+
+.edit_game_form_title{
+    margin-left:60px;
+}
+
+.form_edit_button_game{
+    background-color: rgb(131, 128, 128);
+    color:white;
+    border-radius:16px;
+    border:1px solid lightgrey;
+    padding: 0.75em;
+    font-weight: 600;
+    width: 200px;
+    transition:background-color;
+    margin-top:15px;
+    margin-left:50px;
+}
+
+
+.form_edit_button_game:hover{
+    background-color: rgb(80, 77, 77);
+    cursor:pointer;
+}
