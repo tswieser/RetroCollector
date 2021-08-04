@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { priceFinder } from '../../store/game'
 import { postGames } from '../../store/game'
+import { postReviews } from '../../store/review'
+import ReactStars from 'react-stars'
 
 
 function CreateGame({ setShowModal, consoleInfo }) {
@@ -15,6 +17,7 @@ function CreateGame({ setShowModal, consoleInfo }) {
     const [release_date, setReleaseDate] = useState('')
     const [errors, setErrors] = useState('')
     const [condition, setCondition] = useState("")
+    const [rating, setRating] = useState()
 
 
     const searchedGame = useSelector(state => state.games.search)
@@ -62,7 +65,9 @@ function CreateGame({ setShowModal, consoleInfo }) {
             genre,
             release_date
         }
+        const review = { rating: rating }
         const data = await dispatch(postGames(consoleInfo.id, newGame))
+        dispatch(postReviews(data.id, review))
         if (data.errors) {
             setErrors(data.errors);
             return
@@ -146,6 +151,14 @@ function CreateGame({ setShowModal, consoleInfo }) {
                     </div>
                     <div>
                         <input placeholder="Optional" id="release_date" className="game_input_name" name="release_date" type="text" value={release_date} onChange={(e) => setReleaseDate(e.target.value)} />
+                    </div>
+                    <div className="rating_container">
+                        <ReactStars
+                            count={5}
+                            size={38}
+                            value={rating}
+                            onChange={setRating}
+                        />
                     </div>
                     <div className="button_container">
                         <button className="game_form_button" type="submit">

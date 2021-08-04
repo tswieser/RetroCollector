@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 import { getCollections } from "../../store/collections";
 import { getConsoles } from "../../store/console"
+import { getReviews } from '../../store/review'
 import ConsoleModal from '../createConsoleModal'
 import EditConsoleModal from '../editConsoleModal'
 import DeleteConsoleModal from "../deleteConsoleModal";
@@ -17,6 +18,7 @@ const GamesPage = () => {
     useEffect(() => {
         dispatch(getCollections())
         dispatch(getConsoles(id))
+        dispatch(getReviews())
 
     }, [dispatch])
 

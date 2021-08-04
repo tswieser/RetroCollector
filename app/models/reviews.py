@@ -6,7 +6,7 @@ class Review(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     rating = db.Column(db.Integer, nullable=False)
-    review = db.Column(db.Text, nullable=False)
+    review = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     game_id = db.Column(
         db.Integer, db.ForeignKey("games.id"), nullable=False)

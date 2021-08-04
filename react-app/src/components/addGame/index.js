@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getGames } from "../../store/game"
 import DeleteGameModal from '../deleteGameModal'
 import EditGameModal from '../editGameModal'
+import Reviews from '../reviews'
 import "./addGame.css"
 
 
@@ -36,6 +37,7 @@ const AddGames = ({ consoleInfo }) => {
                         <th>Genre</th>
                         <th>Release Date</th>
                         <th>Console</th>
+                        <th>Rating</th>
                         <th>Edit/ Delete</th>
                     </tr>
                     {gamesArr.map((game) => (
@@ -55,6 +57,11 @@ const AddGames = ({ consoleInfo }) => {
                             </td>
                             <td>
                                 {consoleInfo.name}
+                            </td>
+                            <td>
+                                <div>
+                                    <Reviews game={game} />
+                                </div>
                             </td>
                             <td>
                                 <div className="edit_delete_buttons">

@@ -11,6 +11,7 @@ from .api.auth_routes import auth_routes
 from .api.collections import collection_routes
 from .api.consoles import console_routes
 from .api.games import game_routes
+from .api.reviews import review_routes
 
 from .seeds import seed_commands
 
@@ -37,6 +38,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(collection_routes)
 app.register_blueprint(console_routes)
 app.register_blueprint(game_routes)
+app.register_blueprint(review_routes)
 db.init_app(app)
 Migrate(app, db)
 
