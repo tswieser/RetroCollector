@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from ..models import db, Game
+from ..models import db, Game, Review
 from flask_login import current_user
 from app.forms import GameForm
 
@@ -63,9 +63,12 @@ def put_game(id):
     return {'errors': errorMessages}
 
 
-@game_routes.route('/api/games/<int:id>', methods=["DELETE"])
+@ game_routes.route('/api/games/<int:id>', methods=["DELETE"])
 def delete_game(id):
     game = Game.query.get(id)
+    reviews = Review.query.filter(Review.game_id == id).all()
+    for review in reviews:
+        db.session.delete(review)
     db.session.delete(game)
     db.session.commit()
     return {'message': True}

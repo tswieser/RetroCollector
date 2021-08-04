@@ -155,9 +155,12 @@ function CreateGame({ setShowModal, consoleInfo }) {
                     <div className="rating_container">
                         <ReactStars
                             count={5}
+                            half={false}
                             size={38}
                             value={rating}
                             onChange={setRating}
+                            color1={'#f1f1f1'}
+                            color2={'rgb(131, 128, 128)'}
                         />
                     </div>
                     <div className="button_container">

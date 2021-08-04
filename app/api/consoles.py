@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from ..models import db, Console, Game
+from ..models import db, Console, Game, Review
 from flask_login import current_user
 from app.forms import ConsoleForm
 
@@ -64,8 +64,13 @@ def put_console(id):
 def delete_club(id):
     console = Console.query.get(id)
     games = Game.query.filter(Game.console_id == id).all()
+
     for game in games:
+        reviews = Review.query.filter(Review.game_id == game.id).all()
+        for review in reviews:
+            db.session.delete(review)
         db.session.delete(game)
+
     db.session.delete(console)
     db.session.commit()
     return {'message': True}

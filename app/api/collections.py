@@ -1,6 +1,6 @@
 
 from flask import Blueprint, request
-from ..models import db, Collection, Console, Game
+from ..models import db, Collection, Console, Game, Review
 from flask_login import current_user
 from app.forms import CollectionForm
 # from app.forms import
@@ -68,11 +68,16 @@ def delete_club(id):
     collection = Collection.query.get(id)
     consoles = Console.query.filter(Console.collection_id == id).all()
     games = Game.query.filter(Game.collection_id == id).all()
-    print('===================>', consoles)
+
     for game in games:
+        reviews = Review.query.filter(Review.game_id == game.id).all()
+        for review in reviews:
+            db.session.delete(review)
         db.session.delete(game)
+
     for console in consoles:
         db.session.delete(console)
+        
     db.session.delete(collection)
     db.session.commit()
     return {'message': True}

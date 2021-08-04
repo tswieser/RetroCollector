@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import ReactStars from 'react-stars'
+import { useDispatch, useSelector } from 'react-redux'
 import { putGames } from '../../store/game'
+import { putReviews, postReviews } from '../../store/review'
 import './editGame.css'
 
 function EditGame({ setShowModal, game }) {
@@ -11,6 +13,10 @@ function EditGame({ setShowModal, game }) {
     const [release_date, setReleaseDate] = useState(game.release_date)
     const [errors, setErrors] = useState('')
 
+    const reviews = useSelector((state) => Object.values(state.reviews))
+    const review = reviews.find((review) => review?.game_id === game.id)
+    const [rating, setRating] = useState(review?.rating)
+
     async function handleSubmit(e) {
         e.preventDefault()
         const newGame = {
@@ -19,7 +25,16 @@ function EditGame({ setShowModal, game }) {
             genre,
             release_date
         }
+        const updatedReview = { rating: rating }
+
         const data = await dispatch(putGames(game.id, newGame))
+
+        if (!review?.rating) {
+            dispatch(postReviews(data.id, updatedReview))
+        } else {
+            dispatch(putReviews(data.id, updatedReview))
+        }
+
         if (data.errors) {
             setErrors(data.errors);
             return
@@ -73,6 +88,17 @@ function EditGame({ setShowModal, game }) {
                 </div>
                 <div>
                     <input placeholder="Optional" id="release_date" className="game_input_name" name="release_date" type="text" value={release_date} onChange={(e) => setReleaseDate(e.target.value)} />
+                </div>
+                <div className="rating_container">
+                    <ReactStars
+                        count={5}
+                        size={38}
+                        half={false}
+                        value={rating}
+                        onChange={setRating}
+                        color1={'#f1f1f1'}
+                        color2={'rgb(131, 128, 128)'}
+                    />
                 </div>
                 <div className="game_button_container">
                     <button className="form_edit_button_game" type="submit">
