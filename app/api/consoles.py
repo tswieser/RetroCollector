@@ -21,7 +21,7 @@ def post_console(id):
         console = Console(
             name=form.name.data,
             value=form.value.data,
-            console_img_url=form.value.data,
+            console_img_url=form.console_img_url.data,
             collection_id=id
         )
         db.session.add(console)

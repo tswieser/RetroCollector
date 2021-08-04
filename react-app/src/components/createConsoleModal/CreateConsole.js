@@ -49,6 +49,7 @@ function CreateConsole({ setShowModal, id }) {
                     <div>
                         <input id="name" className="console_input_name" name="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
+                    
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
                             Console Image Url
@@ -57,6 +58,7 @@ function CreateConsole({ setShowModal, id }) {
                     <div>
                         <input id="imgUrl" className="console_input_name" name="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
                     </div>
+
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
                             Console Value
