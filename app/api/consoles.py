@@ -47,7 +47,6 @@ def put_console(id):
         editConsole.name = form.name.data,
         editConsole.value = form.value.data,
         editConsole.console_img_url = form.console_img_url.data,
-        editConsole.collection_id = id
         db.session.commit()
         return editConsole.to_dict()
 

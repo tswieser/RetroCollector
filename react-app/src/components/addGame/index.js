@@ -22,7 +22,6 @@ const AddGames = ({ consoleInfo }) => {
     })
 
 
-
     useEffect(() => {
         dispatch(getGames(consoleInfo.id))
     }, [dispatch])

@@ -21,7 +21,28 @@ const GamesPage = () => {
     }, [dispatch])
 
     const games = useSelector((state) => Object.values(state.games))
+    const collectionGames = games.filter((game) => game?.collection_id === +id)
+    const collections = useSelector((state) => Object.values(state.collections))
 
+    const collection = collections.find((collection) => collection?.id === +id)
+
+    const consoles = useSelector((state) => Object.values(state.consoles))
+    const collectionConsoles = consoles.filter((console) => console?.collection_id == +id)
+    console.log(collectionConsoles)
+
+
+    const collectionValue = (consoles, games) => {
+        let value = 0
+        consoles.forEach((console) => {
+            value += console.value
+        })
+        games.forEach((game) => {
+            value += game.value
+        })
+        return value.toFixed(2)
+    }
+
+    console.log(collectionValue(collectionConsoles, collectionGames))
 
     const valueFinder = (consoleId) => {
         let counter = 0
@@ -35,10 +56,6 @@ const GamesPage = () => {
     }
 
 
-    const collections = useSelector((state) => Object.values(state.collections))
-    const collection = collections.find((collection) => collection?.id === +id)
-
-    const consoles = useSelector((state) => Object.values(state.consoles))
 
     return (
         <>
@@ -48,6 +65,9 @@ const GamesPage = () => {
                 </div>
                 <div className="collection_title">
                     <h2>{collection?.description}</h2>
+                </div>
+                <div className="collection_title">
+                    <h2>Total Collection Value: ${collectionValue(collectionConsoles, collectionGames)}</h2>
                 </div>
             </div>
             <div className="cards_container">
