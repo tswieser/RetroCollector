@@ -59,7 +59,7 @@ const NavBar = () => {
                             <i class="fas fa-home fa-1x"></i> Home
                         </NavLink>
                     </div>
-                    <div>
+                    <div className="collection_container">
                         <NavLink style={{ textDecoration: 'none', color: "#b3b3b3" }} to='/collections' exact={true} activeClassName='active'
                             activeStyle={{
                                 fontWeight: 'bold',
@@ -67,7 +67,18 @@ const NavBar = () => {
                                 background_Color: "#b3b3b3"
                             }}
                         >
-                            <i class="fas fa-stream"></i> Collections
+                            <i class="fas fa-book-open"></i> Collections
+                        </NavLink>
+                    </div>
+                    <div >
+                        <NavLink style={{ textDecoration: 'none', color: "#b3b3b3" }} to='/wishlist' exact={true} activeClassName='active'
+                            activeStyle={{
+                                fontWeight: 'bold',
+                                color: 'white',
+                                background_Color: "#b3b3b3"
+                            }}
+                        >
+                            <i class="fas fa-stream"></i> WishList
                         </NavLink>
                     </div>
                 </li>

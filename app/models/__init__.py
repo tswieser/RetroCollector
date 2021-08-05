@@ -5,3 +5,4 @@ from .consoles import Console
 from .games import Game
 from .reviews import Review
 from .gamesData import GameData
+from .wishlist import WishList

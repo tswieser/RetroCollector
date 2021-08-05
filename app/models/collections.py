@@ -8,12 +8,10 @@ class Collection(db.Model):
     name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    collection_img_url = db.Column(db.String)
+    collection_img_url = db.Column(db.String, nullable=False)
 
     users = db.relationship('User', back_populates='collections')
-    consoles= db.relationship('Console', back_populates='collections')
-
-
+    consoles = db.relationship('Console', back_populates='collections')
 
     def to_dict(self):
         return{

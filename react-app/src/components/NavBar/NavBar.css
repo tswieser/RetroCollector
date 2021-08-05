@@ -94,6 +94,10 @@ font-size: 25px;
 font-size:25;
 }
 
+.collection_container{
+    margin-bottom: 20px;
+}
+
 
 .site_title{
 display:flex;

@@ -10,6 +10,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import HomePage from './components/home'
+import WishListPage from './components/wishlist'
 import { authenticate } from './store/session';
 
 function App() {
@@ -51,6 +52,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
           < HomePage />
+        </ProtectedRoute>
+        <ProtectedRoute path='/wishlist' exact={true} >
+          <WishListPage />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

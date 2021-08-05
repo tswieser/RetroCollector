@@ -5,13 +5,15 @@ import collectionsReducer from './collections'
 import consolesReducer from './console'
 import gamesReducer from './game'
 import reviewsReducer from './review'
+import wishListReducer from './wishlist'
 
 const rootReducer = combineReducers({
   session,
   collections: collectionsReducer,
   consoles: consolesReducer,
   games: gamesReducer,
-  reviews: reviewsReducer
+  reviews: reviewsReducer,
+  wishList: wishListReducer
 });
 
 

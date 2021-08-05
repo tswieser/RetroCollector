@@ -14,6 +14,7 @@ class User(db.Model, UserMixin):
 
     collections = db.relationship('Collection', back_populates='users')
     reviews = db.relationship('Review', back_populates='users')
+    wishlists = db.relationship('WishList', back_populates='users')
 
     @property
     def password(self):

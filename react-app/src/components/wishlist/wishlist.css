@@ -1,0 +1,15 @@
+
+.wishList_card{
+    display:flex;
+    color:#a9aaac;
+    box-shadow: 0 20px 48px rgb(0 0 0 / 35%);
+    border-radius: 8px;
+    margin:3em;
+    height:100%;
+    width:80em;
+    flex-direction:column;
+    background-image:
+    linear-gradient(
+        #4b4b4b, rgb(119, 119, 119) 90%
+    );
+}

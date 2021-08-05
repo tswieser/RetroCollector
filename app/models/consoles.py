@@ -7,7 +7,7 @@ class Console(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
     value = db.Column(db.Numeric(10, 2))
-    console_img_url = db.Column(db.String)
+    console_img_url = db.Column(db.String, nullable=False)
     collection_id = db.Column(
         db.Integer, db.ForeignKey("collections.id"), nullable=False)
 
