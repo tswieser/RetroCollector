@@ -9,7 +9,7 @@ function ConsoleModal({id}) {
     return (
         <>
             <div className="plus_div" onClick={() => setShowModal(true)}>
-                <i class="fas fa-plus fa-5x"></i>
+                <i className="fas fa-plus fa-5x"></i>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

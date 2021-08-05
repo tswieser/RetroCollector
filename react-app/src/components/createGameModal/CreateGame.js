@@ -22,7 +22,7 @@ function CreateGame({ setShowModal, consoleInfo }) {
 
     const searchedGame = useSelector(state => state.games.search)
     const games = useSelector(state => Object.values(state.games))
-    const addDecimal = (num) => (num / 100).toFixed(2)
+
 
 
     useEffect(() => {
