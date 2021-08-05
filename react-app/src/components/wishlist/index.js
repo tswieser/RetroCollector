@@ -16,7 +16,6 @@ const WishListPage = () => {
 
     const user = useSelector(state => state.session.user)
     const wish = useSelector((state) => Object.values(state.wishList))
-    console.log(wish)
 
     return (
         <div>
