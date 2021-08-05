@@ -7,9 +7,15 @@ from app.forms import GameForm
 game_routes = Blueprint('games', __name__)
 
 
-@game_routes.route('/api/consoles/<int:id>/games')
+# @game_routes.route('/api/consoles/<int:id>/games')
+# def get_games(id):
+#     all_games = Game.query.filter(Game.console_id == id).all()
+#     return {'games': [game.to_dict() for game in all_games]}
+
+
+@game_routes.route('/api/collections/<int:id>/games')
 def get_games(id):
-    all_games = Game.query.filter(Game.console_id == id).all()
+    all_games = Game.query.filter(Game.collection_id == id).all()
     return {'games': [game.to_dict() for game in all_games]}
 
 

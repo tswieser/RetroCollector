@@ -36,7 +36,7 @@ export const priceFinder = (game) => async (dispatch) => {
     const res = await fetch(`https://www.pricecharting.com/api/product?t=d6535b45236fa09eb29fbe82cfbfc96097246f08&q=${game}`);
     if (res.ok) {
         const game = await res.json()
-      
+
         dispatch(loadGame(game))
         return game
     } else {
@@ -45,8 +45,18 @@ export const priceFinder = (game) => async (dispatch) => {
 }
 
 
+// export const getGames = (id) => async (dispatch) => {
+//     const res = await fetch(`/api/consoles/${id}/games`)
+//     const games = await res.json()
+//     if (res.ok) {
+
+//         dispatch(loadAllGames(games))
+//         return games
+//     }
+// }
+
 export const getGames = (id) => async (dispatch) => {
-    const res = await fetch(`/api/consoles/${id}/games`)
+    const res = await fetch(`/api/collections/${id}/games`)
     const games = await res.json()
     if (res.ok) {
 

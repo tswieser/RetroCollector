@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import GameModal from '../createGameModal'
-import { useSelector, useDispatch } from "react-redux";
-import { getGames } from "../../store/game"
+import { useSelector } from "react-redux";
 import DeleteGameModal from '../deleteGameModal'
 import EditGameModal from '../editGameModal'
 import Reviews from '../reviews'
@@ -11,8 +10,6 @@ import "./addGame.css"
 
 
 const AddGames = ({ consoleInfo }) => {
-    const dispatch = useDispatch()
-
     const games = useSelector((state) => Object.values(state.games))
     const gamesArr = []
 
@@ -22,10 +19,6 @@ const AddGames = ({ consoleInfo }) => {
         }
     })
 
-
-    useEffect(() => {
-        dispatch(getGames(consoleInfo.id))
-    }, [dispatch])
 
     return (
         <>
