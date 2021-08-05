@@ -30,7 +30,7 @@ const GamesPage = () => {
 
     const consoles = useSelector((state) => Object.values(state.consoles))
     const collectionConsoles = consoles.filter((console) => console?.collection_id == +id)
-    console.log(collectionConsoles)
+
 
 
     const collectionValue = (consoles, games) => {
@@ -44,7 +44,7 @@ const GamesPage = () => {
         return value.toFixed(2)
     }
 
-    console.log(collectionValue(collectionConsoles, collectionGames))
+  
 
     const valueFinder = (consoleId) => {
         let counter = 0
