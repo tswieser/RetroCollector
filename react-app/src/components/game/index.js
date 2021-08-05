@@ -66,10 +66,10 @@ const GamesPage = () => {
                     <h1>{collection?.name} Collection</h1>
                 </div>
                 <div className="collection_title">
-                    <h2>{collection?.description}</h2>
+                    <h3>{collection?.description}</h3>
                 </div>
                 <div className="collection_title">
-                    <h2>Total Collection Value: ${collectionValue(collectionConsoles, collectionGames)}</h2>
+                    <h3>Total Collection Value: ${collectionValue(collectionConsoles, collectionGames)}</h3>
                 </div>
             </div>
             <div className="cards_container">
