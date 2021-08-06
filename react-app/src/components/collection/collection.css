@@ -7,7 +7,8 @@
 
 .collection_card{
     display:flex;
-    color:#a9aaac;
+    /* color:#a9aaac; */
+    color:#cfcccc;
     box-shadow: 0 20px 48px rgb(0 0 0 / 35%);
     border-radius: 8px;
     margin:3em;
@@ -45,7 +46,7 @@ margin-left:25em;
 }
 
 .collection_name{
-    color:#a9aaac;
+    color:#cfcccc;
 }
 .collection_name:hover{
     cursor:pointer;
@@ -64,7 +65,7 @@ margin-left:25em;
 
 .add_collection_card{
     display:flex;
-    color:#a9aaac;
+    color:#cfcccc;
     box-shadow: 0 20px 48px rgb(0 0 0 / 35%);
     border-radius: 8px;
     margin:3em;

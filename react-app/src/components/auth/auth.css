@@ -20,7 +20,7 @@
 
 .login_container{
     display:flex;
-    color:#a9aaac;
+    color:#cfcccc;
     box-shadow: 0 20px 48px rgb(0 0 0 / 35%);
     border-radius: 8px;
     margin:3em;
@@ -37,7 +37,7 @@
 
 .signUp_container{
     display:flex;
-    color:#a9aaac;
+    color:#cfcccc;
     box-shadow: 0 20px 48px rgb(0 0 0 / 35%);
     border-radius: 8px;
     margin:3em;

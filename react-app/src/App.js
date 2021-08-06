@@ -50,9 +50,7 @@ function App() {
         <ProtectedRoute path='/api/collections/:id' exact={true} >
           <GamesPage />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
-          < HomePage />
-        </ProtectedRoute>
+        < HomePage path='/' exact={true} />
         <ProtectedRoute path='/wishlist' exact={true} >
           <WishListPage />
         </ProtectedRoute>
