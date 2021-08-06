@@ -9,6 +9,7 @@ import ConsoleModal from '../createConsoleModal'
 import EditConsoleModal from '../editConsoleModal'
 import DeleteConsoleModal from "../deleteConsoleModal";
 import AddGames from '../addGame'
+import controller from '../../images/retrocontroller.png'
 import "./game.css"
 
 
@@ -79,7 +80,7 @@ const GamesPage = () => {
                     <div className='console_card'>
                         <div className="cardHeader">
                             <div className="imgContainer" >
-                                <img className="console_img" src={consoleInfo.console_img_url} />
+                                <img className="console_img" src={consoleInfo.console_img_url ? consoleInfo.console_img_url : controller} />
                             </div>
                             <div className="console_info">
                                 <div className="console_name">

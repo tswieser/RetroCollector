@@ -7,4 +7,4 @@ class ConsoleForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()])
     value = StringField('description', validators=[DataRequired()])
     console_img_url = StringField(
-        'collection_img_url', validators=[DataRequired()])
+        'collection_img_url')

@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 import CollectionModal from '../createCollectionModal'
 import EditCollectionModal from '../editCollectionModal'
 import DeleteCollectionModal from '../deleteCollectionModal'
+import controller from '../../images/retrocontroller.png'
 import './collection.css'
+
 
 const CollectionsPage = () => {
     const dispatch = useDispatch()
+
 
     useEffect(() => {
         dispatch(getCollections())
@@ -22,7 +25,7 @@ const CollectionsPage = () => {
                 {collections.map((collection) => (
                     <div className="collection_card">
                         <div >
-                            <img className="collection_img" src={collection.collection_img_url} />
+                            <img className="collection_img" src={collection.collection_img_url ? collection.collection_img_url : controller} />
                         </div>
                         <div className="collection_name">
                             <Link style={{ textDecoration: 'none' }} className="collection_name" key={collection.id} to={`/api/collections/${collection.id}`}>

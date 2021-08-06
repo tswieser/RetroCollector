@@ -3,7 +3,7 @@
     text-align:center;
     font-size:50px;
     font-weight:bold;
-    margin-top:1em;
+    margin-top:.5em;
     font-family: monospace;
 }
 
@@ -15,7 +15,7 @@
     color:#cfcccc;
     box-shadow: 0 20px 48px rgb(0 0 0 / 45%);
     margin-left:12em;
-    margin-top:5em;
+    margin-top:3em;
     border-radius:8px;
     flex-direction: column;
     align-items:center;
@@ -40,7 +40,7 @@
     color:#cfcccc;
     box-shadow: 0 20px 48px rgb(0 0 0 / 45%);
     margin-left:12em;
-    margin-top:5em;
+    margin-top:4em;
     border-radius:8px;
     flex-direction: column;
     align-items:center;

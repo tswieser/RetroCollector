@@ -128,12 +128,12 @@ const SignUpForm = () => {
               </div>
             </div>
           </p>
+          <button
+            className="demo_user_button"
+            onClick={demoLogin}>
+            Log in as a <span>Demo user</span>
+          </button>
         </div>
-        <button
-          className="demo_user_button"
-          onClick={demoLogin}>
-          Log in as a <span>Demo user</span>
-        </button>
       </form>
     </div>
   );

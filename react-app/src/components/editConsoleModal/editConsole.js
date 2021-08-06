@@ -56,7 +56,7 @@ function EditConsole({ setShowModal, consoleInfo }) {
                         </label>
                     </div>
                     <div>
-                        <input id="imgUrl" className="console_input_name" name="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
+                        <input placeholder="Optional" id="imgUrl" className="console_input_name" name="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
                     </div>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">

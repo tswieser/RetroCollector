@@ -55,7 +55,7 @@ function EditCollection({ setShowModal, collection }) {
                         </label>
                     </div>
                     <div>
-                        <input id="imgUrl" className="collection_input_name" name="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
+                        <input  placeholder="Optional" id="imgUrl" className="collection_input_name" name="imgUrl" type="text" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} />
                     </div>
                     <div className="form_label_container">
                         <label htmlFor="name" className="form_labels">
