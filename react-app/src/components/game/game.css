@@ -41,7 +41,6 @@ font-weight: bold;
 .cardHeader{
     display:flex;
     border-bottom: 1px solid black;
-    width:80em;
     height:250px;
     box-shadow: 0 20px 48px rgb(0 0 0 / 10%);
 }
@@ -58,8 +57,10 @@ font-weight: bold;
 .console_icon_container{
     display:flex;
     align-items: flex-end;
-    margin-left: 41em;
     margin-bottom:20px;
+    width: 60%;
+    margin-right: 1rem;
+    justify-content: flex-end;
 
 }
 
