@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import CreateWish from "./createWishModal";
-
+import './wishList.css'
 
 function WishModal() {
     const [showModal, setShowModal] = useState(false);
