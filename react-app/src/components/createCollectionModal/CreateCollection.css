@@ -2,6 +2,10 @@
     margin-top:80px;
 }
 
+.plus_div:hover{
+    color:white;
+}
+
 .collection_input_name{
     border-radius: 2px;
     text-indent: 5px;

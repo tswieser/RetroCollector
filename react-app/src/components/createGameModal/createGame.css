@@ -14,6 +14,10 @@
     margin-top:10px;
 }
 
+.plus_button:hover{
+    color:white
+}
+
 .add_game_container:hover{
  cursor: pointer;
  background-color:#606061
