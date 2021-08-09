@@ -1,134 +1,89 @@
-# Flask React Project
+# Welcome to Retro Collector
+Retro Collector, A One stop shop for any real gamer that wants to be able to keep tabs on their collection. The idea behind the creation of retro collector is to give the user the ability to catalog their gaming library and seperate them into seperate collections. From there The user has to ability to enter in the individual console and enter the games they have for that console to keep track of the value of the collection. In addition the User will have the ability to create wish lists of games that they may want and there current value to know uf hey are getting a good deal when they see it at a store.
 
-This is the starter for the Flask React project.
+<br>
 
-## Getting started
+[Click To try out Retro Collector](https://retro-collector.herokuapp.com/)
 
-1. Clone this repository (only this branch)
+<br>
 
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
 
-2. Install dependencies
+## Splash Page
 
-      ```bash
-      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
-      ```
+![image](https://user-images.githubusercontent.com/79103461/128703255-7e2eeb16-5a39-4249-8563-333042c622cb.png)
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+<br>
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+# Technologies used
 
-   ```bash
-   pipenv shell
-   ```
+The backend for retro collector is managed using python and flask in order to control communication to the psql database with the help of SQLAlchemy. The front end is rendered with the use of react and the use of javascript and styled using CSS. React was chosen for this project due to its lite foot print, quick response times to maximize user experience especially when there may be multiple query's happening per page, and strong ecosystem backing and support especially around library's and other recourses to help maximize efficiency.
 
-   ```bash
-   flask db upgrade
-   ```
+<br>
 
-   ```bash
-   flask seed all
-   ```
+# Components
 
-   ```bash
-   flask run
-   ```
+## Creating Collections
+* Once you have created an account or logged in as a demo user, you then have the ability to access the collections page where you are able to create edit and delete any of the collections that you have created. The main intention of this page is to ensure that you are able to organize your retro library effectively.
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+<br>
 
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
+![image](https://user-images.githubusercontent.com/79103461/128703714-25978ea1-889a-4164-932f-567f84c138d3.png)
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
 
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
+<br>
 
-## Deploy to Heroku
+## Adding Consoles
+* Once a collection is created you can then add consoles to the collection where you can input a value and an image to render on the page. The header of the newly added console will keep track of the value of the console and all the games and tell you what the entire collection is currently worth. You also have the ability to adjust the values or images as you please.
 
-1. Before you deploy, don't forget to run the following command in order to
-ensure that your production environment has all of your up-to-date
-dependencies. You only have to run this command when you have installed new
-Python packages since your last deployment, but if you aren't sure, it won't
-hurt to run it again.
+<br>
 
-   ```bash
-   pipenv lock -r > requirements.txt
-   ```
 
-2. Create a new project on Heroku
-3. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-4. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-5. Run
+![image](https://user-images.githubusercontent.com/79103461/128705326-2941a1b8-fecc-4dcf-ba28-de37758d5c98.png)
 
-   ```bash
-   heroku login
-   ```
+<br>
 
-6. Login to the heroku container registry
+```javascript
+   const collectionValue = (consoles, games) => {
+        let value = 0
+        consoles.forEach((console) => {
+            value += console.value
+        })
+        games.forEach((game) => {
+            value += game.value
+        })
+        return value.toFixed(2)
+    }
 
-   ```bash
-   heroku container:login
-   ```
 
-7. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-8. Push your docker container to heroku from the root directory of your project.
-   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
-   This will build the Dockerfile and push the image to your heroku container registry.
 
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
+    const valueFinder = (consoleId) => {
+        let counter = 0
+        for (let i = 0; i < games.length; i++) {
+            let game = games[i]
+            if (game.console_id === consoleId) {
+                counter += game.value
+            }
+        }
+        return counter.toFixed(2)
+    }
 
-9. Release your docker container to heroku
+```
 
-      ```bash
-      heroku container:release web -a {NAME_OF_HEROKU_APP}
-      ```
+<br>
 
-10. set up your database
+## Adding games
+* To complete the full functionality of keeping track of your retro game collection you then have the ability to add games to the consoles that you have created. When entering the information into the form in order to add game you have two options. You can either enter in custom information into the form and add your game to the collection that way or you can opt for the quick search function which makes a call to an API via PriceCharting which keeps track of game values and basic information. This option will then auto fill out your form for you to make the process seamless. It is also important to note that if you disagree with the information returned from the api call you can still adjust it.
 
-      ```bash
-      heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-      heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-      ```
+<br>
 
-11. Under Settings find "Config Vars" and add any additional/secret .env
-variables.
 
-12. profit
+![image](https://user-images.githubusercontent.com/79103461/128705414-18a1347f-22e3-4893-9640-7f63f5b5760e.png)
 
-### For M1 Mac users
+<br>
 
-(Replaces **Step 8**)
+## WishList
+* The final main feature of retro collector is the ability to create wish lists. Once on the wishlist page you are able to add games in a very similar fashion that you can add games to consoles. Again, you have the ability to make custom entries or use the api call for ease of use. Once the you find the game that you are looking for you can add it to this wishlist so when you are out shopping for games you can know right away if a listed game is a good deal or not based on its price.
 
-1. Build image with linux platform for heroku servers. Replace
-{NAME_OF_HEROKU_APP} with your own tag:
+<br>
 
-   ```bash=
-   docker buildx build --platform linux/amd64 -t {NAME_OF_HEROKU_APP} .
-   ```
-
-2. Tag your app with the url for your apps registry. Make sure to use the name
-of your Heroku app in the url and tag name:
-
-   ```bash=2
-   docker tag {NAME_OF_HEROKU_APP} registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
-
-3. Use docker to push the image to the Heroku container registry:
-
-   ```bash=3
-   docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
+![image](https://user-images.githubusercontent.com/79103461/128707223-1987ba05-00ca-465e-af18-f1c3a067b3f0.png)
