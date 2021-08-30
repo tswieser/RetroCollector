@@ -65,7 +65,7 @@ function CreateConsole({ setShowModal, id }) {
                         </label>
                     </div>
                     <div>
-                        <input id="value" className="console_input_name" name="value" type="text" value={value} onChange={(e) => setValue(e.target.value)} />
+                        <input id="value" className="console_input_name" name="value" type="number" value={value} onChange={(e) => setValue(e.target.value)} />
                     </div>
                     <div className="button_container">
                         <button className="form_edit_button" type="submit">
