@@ -25,7 +25,9 @@ const CollectionsPage = () => {
                 {collections.map((collection) => (
                     <div className="collection_card">
                         <div >
-                            <img className="collection_img" src={collection.collection_img_url ? collection.collection_img_url : controller} />
+                            <Link style={{ textDecoration: 'none' }} className="collection_name" key={collection.id} to={`/api/collections/${collection.id}`}>
+                                <img className="collection_img" src={collection.collection_img_url ? collection.collection_img_url : controller} />
+                            </Link>
                         </div>
                         <div className="collection_name">
                             <Link style={{ textDecoration: 'none' }} className="collection_name" key={collection.id} to={`/api/collections/${collection.id}`}>
