@@ -22,9 +22,9 @@ const HomePage = () => {
                             </div>
                         </div>
                         <div className="home_btn_container">
-                            <NavLink style={{ textDecoration: 'none' }} to='/sign-up' exact={true}>
+                            <NavLink style={{ textDecoration: 'none' }} to='/collections' exact={true}>
                                 <button className="home_button">
-                                    CREATE AN ACCOUNT
+                                    CREATE A COLLECTION
                                 </button>
                             </NavLink>
                         </div>
