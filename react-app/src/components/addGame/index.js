@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import DeleteGameModal from '../deleteGameModal'
 import EditGameModal from '../editGameModal'
 import Reviews from '../reviews'
+import { useTable } from 'react-table';
 import "./addGame.css"
 
 
@@ -18,6 +19,7 @@ const AddGames = ({ consoleInfo }) => {
             gamesArr.push(game)
         }
     })
+
 
 
     return (
